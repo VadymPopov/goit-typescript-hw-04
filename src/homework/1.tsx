@@ -1,15 +1,8 @@
 import React, { useEffect, useRef, ReactNode } from 'react';
 
-
 interface Props {
   children: ReactNode;
   onContentEndVisible:()=>void;
-}
-
-interface IOptions {
-  rootMargin: string;
-  threshold: number;
-  root: Element | null;
 }
 
 // Опишіть Props
@@ -19,7 +12,7 @@ export function Observer({ children, onContentEndVisible }: Props) {
 
   useEffect(() => {
     // Вкажіть правильний тип для options, підказка, клас також можна вказувати як тип
-    const options: IOptions = {
+    const options: IntersectionObserverInit = {
       rootMargin: '0px',
       threshold: 1.0,
       root: null,
